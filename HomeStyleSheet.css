@@ -1,0 +1,141 @@
+html {
+    height: 100%
+}
+.title {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -275%);
+  font-size: 50px;
+  color: black;
+  font-weight: 900;
+}
+.arrow {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-80px) translateX(-50%) rotate(45deg);
+}
+.arrow span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    animation: animate 1.5s linear infinite;
+    opacity: 1;
+}
+.arrow span:nth-child(1) {
+    transform: translate(-15px, -15px);
+    animation-delay: -0.4s;
+}
+.arrow span:nth-child(2) {
+    transform: translate(0, 0);
+    animation-delay: -0.2s;
+}
+.arrow span:nth-child(3) {
+    transform: translate(15px, 15px);
+    animation-delay: 0s;
+}
+@keyframes animate
+{
+    0%
+    {
+        top: -5px;
+        left: -5px;
+        opacity: 0;
+
+    }
+    25%
+    {
+        top: 0px;
+        left: 0px;
+        opacity: 1;
+    }
+    100%
+    {
+        top: 5px;
+        left: 5px;
+        opacity: 0;
+
+    }
+}
+.horizontal {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.cases, .deaths, .recoveries {
+    width: 33%;
+    height: 150px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 50px;
+}
+.cases {
+    background-color: #8edbff;
+}
+.deaths {
+    background-color: #ff9298;
+}
+.recoveries {
+    background-color: #00ef8e ;
+}
+h3 {
+    text-align: center;
+    font-size: 30px;
+}
+.center {
+    border-collapse: collapse;
+}
+.center {
+    border-collapse: collapse;
+    width: 90%;
+    border-color: #dfdfdf;
+    margin-top: 10px;
+}
+.center th {
+    background-color: #03adfc;
+    border-top: 1px solid #dfdfdf;
+    padding: 8px 8px 8px 8px;
+    color: black;
+    font-weight: 400;
+    /*text-decoration: underline;*/
+}
+.center td {
+    background-color: #f2f2f2;
+    border-top: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+    padding: 7px 7px 7px 7px;
+    text-align: center;
+    font-weight: lighter;
+}
+.country_code {
+    border: 6px solid transparent;
+    background-color: #fa7e0a;
+    padding-left: 0px;
+}
+table.center {
+   margin-left:auto;
+   margin-right:auto;
+ }
+#regions_div {
+    width: 950px;
+    height: 500px;
+    margin: 0 auto;
+}

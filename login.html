@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>Safedemic: Login</title>
+	    <link href="https://fonts.googleapis.com/css?family=Archivo:500|Open+Sans:300,700" rel="stylesheet">
+	    <link href="GlobalStyleSheet.css" rel="stylesheet">
+		<link href="LoginStyleSheet.css" rel="stylesheet">
+	</head>
+	<body>
+	  <div id="navigation" class="navigation">
+	    <a id="homedirect" class="logo" href="index.html"><img src="logo.png" style="width:55px;height:55px;"></a>
+	    <a id="signoutdirect" onclick="signout()" style="float:right">Sign Out</a>
+	  </div>
+	    <div id = "signin_form" class="login">
+	      <label for="email_label">Email: </label>
+	      <input type = "text" id = "email" required>
+	      <label for="password_label">Password: </label>
+	      <input type = "password" id = "password" required>
+	      <button id="register" style="float:left" class="gbutton" onclick ="register()">Sign Up</button>
+	      <button id="signin" style="float:right" class="gbutton" onclick = "signin()">Login</button>
+	      <br>
+	      <a id="resetpword" style="float:left" onclick= "resetpword()"><u>Forgot password?</u></a>
+	      <a id="verifyemail" style="float:right" onclick= "verifyemail()"><u>Verify Email</u></a><br><br><br>
+	      <p id="login_status" class="status"></p>
+	    </div>
+
+	  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	  <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+	  <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
+	  <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-database.js"></script>
+	  <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js"></script>
+
+	  <script>
+	    var firebaseConfig = {
+	      apiKey: "AIzaSyAieE_xPaSPjzqzAjLsidgQEOeJlPDG9os",
+	      authDomain: "safedemic-68059.firebaseapp.com",
+	      databaseURL: "https://safedemic-68059.firebaseio.com",
+	      projectId: "safedemic-68059",
+	      storageBucket: "safedemic-68059.appspot.com",
+	      messagingSenderId: "138013777750",
+	      appId: "1:138013777750:web:99537c0cbecccd1810c0f7",
+	      measurementId: "G-HMHW5D4RDJ"
+	    };
+	    firebase.initializeApp(firebaseConfig);
+	    firebase.analytics();
+	  </script>
+	  <script src="login.js"></script>
+	</body>
+</html>
