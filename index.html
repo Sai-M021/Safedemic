@@ -428,6 +428,7 @@
               }});});
   </script>
 
+<<<<<<< HEAD
 <div>
 	<!-- <h3>Live Statistics & Guidelines</h3> -->
     <table class="center">
@@ -899,6 +900,8 @@
       }
     </script>
 
+=======
+>>>>>>> 6301209b962b5e2980726c71a13365a973922ae2
 <div class="scrolling-wrapper">
        <!-- <h3>News</h3> -->
         <div class="panel" id="p1">
@@ -1827,6 +1830,290 @@
       )
 
   </script>
+
+<div id="regions_div"></div><hr>
+
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+        'mapsApiKey': 'AIzaSyBTrhGG7zVrT_eBVn_06khunxCMz23YXZs'
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+          var arr = [["Country", "Cases"], [{v: 'AE', f: 'UAE'}, {v: 4.056142262059052, f: 11380}], [{v: 'AF', f: 'Afghanistan'}, {v: 3.261976191397812, f: 1828}], [{v: 'AL', f: 'Albania'}, {v: 2.8750612633916997, f: 750}], [{v: 'AM', f: 'Armenia'}, {v: 3.271144317949078, f: 1867}], [{v: 'AO', f: 'Angola'}, {v: 1.4313637641589871, f: 27}], [{v: 'AR', f: 'Argentina'}, {v: 3.6023855901051047, f: 4003}], [{v: 'AT', f: 'Austria'}, {v: 4.1863063842699075, f: 15357}], [{v: 'AU', f: 'Australia'}, {v: 3.8286598965353194, f: 6740}], [{v: 'AZ', f: 'Azerbaijan'}, {v: 3.2347702951609163, f: 1717}], [{v: 'BA', f: 'Bosnia and Herzegovina'}, {v: 3.20002926655377, f: 1585}], [{v: 'BD', f: 'Bangladesh'}, {v: 3.8103669536816245, f: 6462}], [{v: 'BE', f: 'Belgium'}, {v: 4.675173206444007, f: 47334}], [{v: 'BF', f: 'Burkina Faso'}, {v: 2.804820678721162, f: 638}], [{v: 'BG', f: 'Bulgaria'}, {v: 3.1458177144918276, f: 1399}], [{v: 'BI', f: 'Burundi'}, {v: 1.041392685158225, f: 11}], [{v: 'BJ', f: 'Benin'}, {v: 1.8061799739838869, f: 64}], [{v: 'BN', f: 'Brunei Darussalam'}, {v: 2.1398790864012365, f: 138}], [{v: 'BO', f: 'Bolivia'}, {v: 3.006037954997317, f: 1014}], [{v: 'BR', f: 'Brazil'}, {v: 4.856644318550216, f: 71886}], [{v: 'BS', f: 'Bahamas'}, {v: 1.9030899869919433, f: 80}], [{v: 'BT', f: 'Bhutan'}, {v: 0.8450980400142567, f: 7}], [{v: 'BW', f: 'Botswana'}, {v: 1.3617278360175928, f: 23}], [{v: 'BY', f: 'Belarus'}, {v: 4.086644520610805, f: 12208}], [{v: 'BZ', f: 'Belize'}, {v: 1.2552725051033058, f: 18}], [{v: 'CA', f: 'Canada'}, {v: 4.70834440317613, f: 51091}], [{v: 'CD', f: 'DR Congo'}, {v: 2.6730209071288957, f: 471}], [{v: 'CF', f: 'Central African Republic'}, {v: 1.6989700043360185, f: 50}], [{v: 'CG', f: 'Congo'}, {v: 2.3159703454569174, f: 207}], [{v: 'CH', f: 'Switzerland'}, {v: 4.466333688132342, f: 29264}], [{v: 'CI', f: 'Ivory Coast'}, {v: 3.0659529803138694, f: 1164}], [{v: 'CL', f: 'Chile'}, {v: 4.157305630327966, f: 14365}], [{v: 'CM', f: 'Cameroon'}, {v: 3.2317243833285163, f: 1705}], [{v: 'CN', f: 'China'}, {v: 4.9239586170161465, f: 83938}], [{v: 'CO', f: 'Colombia'}, {v: 3.74795530690673, f: 5597}], [{v: 'CR', f: 'Costa Rica'}, {v: 2.8481891169913984, f: 705}], [{v: 'CU', f: 'Cuba'}, {v: 3.1574567681342254, f: 1437}], [{v: 'CY', f: 'Cyprus'}, {v: 2.9227254579932596, f: 837}], [{v: 'CZ', f: 'Czechia'}, {v: 3.874249822778403, f: 7486}], [{v: 'DE', f: 'Germany'}, {v: 5.203400086091227, f: 159735}], [{v: 'DJ', f: 'Djibouti'}, {v: 3.030194785356751, f: 1072}], [{v: 'DK', f: 'Denmark'}, {v: 3.9566005882131763, f: 9049}], [{v: 'DO', f: 'Dominican Republic'}, {v: 3.8072643552761067, f: 6416}], [{v: 'DZ', f: 'Algeria'}, {v: 3.5621738633646483, f: 3649}], [{v: 'EC', f: 'Ecuador'}, {v: 4.384854991717317, f: 24258}], [{v: 'EE', f: 'Estonia'}, {v: 3.2201080880400546, f: 1660}], [{v: 'EG', f: 'Egypt'}, {v: 3.7026028413404273, f: 5042}], [{v: 'EH', f: 'Western Sahara'}, {v: 0.7781512503836435, f: 6}], [{v: 'ER', f: 'Eritrea'}, {v: 1.591064607026499, f: 39}], [{v: 'ES', f: 'Spain'}, {v: 5.365727529564321, f: 232128}], [{v: 'ET', f: 'Ethiopia'}, {v: 2.1003705451175625, f: 126}], ['FK', 0], [{v: 'FI', f: 'Finland'}, {v: 3.675778341674085, f: 4740}], [{v: 'FJ', f: 'Fiji'}, {v: 1.2552725051033058, f: 18}], [{v: 'FR', f: 'France'}, {v: 5.2280203131309255, f: 169052}], [{v: 'GA', f: 'Gabon'}, {v: 2.376576957056512, f: 238}], [{v: 'GB', f: 'United Kingdom'}, {v: 5.207216834787246, f: 161145}], [{v: 'GE', f: 'Georgia'}, {v: 2.7084209001347124, f: 511}], ['GF', 0], [{v: 'GH', f: 'Ghana'}, {v: 3.222976449893391, f: 1671}], ['GL', 0], [{v: 'GM', f: 'Gambia'}, {v: 1.0, f: 10}], [{v: 'GN', f: 'Guinea'}, {v: 3.093421685162235, f: 1240}], [{v: 'GQ', f: 'Equatorial Guinea'}, {v: 2.4983105537896004, f: 315}], [{v: 'GR', f: 'Greece'}, {v: 3.4092566520389096, f: 2566}], [{v: 'GT', f: 'Guatemala'}, {v: 2.7242758696007887, f: 530}], [{v: 'GW', f: 'Guinea-Bissau'}, {v: 1.8633228601204557, f: 73}], [{v: 'GY', f: 'Guyana'}, {v: 1.8692317197309762, f: 74}], [{v: 'HN', f: 'Honduras'}, {v: 2.8463371121298047, f: 702}], [{v: 'HR', f: 'Croatia'}, {v: 3.3111178426625054, f: 2047}], [{v: 'HT', f: 'Haiti'}, {v: 1.8808135922807911, f: 76}], [{v: 'HU', f: 'Hungary'}, {v: 3.4230819582972307, f: 2649}], [{v: 'ID', f: 'Indonesia'}, {v: 3.978226181674526, f: 9511}], [{v: 'IE', f: 'Ireland'}, {v: 4.298350837719156, f: 19877}], [{v: 'IL', f: 'Israel'}, {v: 4.19667350048806, f: 15728}], [{v: 'IN', f: 'India'}, {v: 4.4963760540124005, f: 31360}], [{v: 'IQ', f: 'Iraq'}, {v: 3.2851070295668117, f: 1928}], [{v: 'IR', f: 'Iran'}, {v: 4.9665359401149765, f: 92584}], [{v: 'IS', f: 'Iceland'}, {v: 3.2540644529143377, f: 1795}], [{v: 'IT', f: 'Italy'}, {v: 5.304285826881439, f: 201505}], [{v: 'JM', f: 'Jamaica'}, {v: 2.5611013836490555, f: 364}], [{v: 'JO', f: 'Jordan'}, {v: 2.6522463410033232, f: 449}], [{v: 'JP', f: 'Japan'}, {v: 4.133985746268579, f: 13614}], [{v: 'KE', f: 'Kenya'}, {v: 2.57287160220048, f: 374}], [{v: 'KG', f: 'Kyrgyzstan'}, {v: 2.850033257689769, f: 708}], [{v: 'KH', f: 'Cambodia'}, {v: 2.086359830674748, f: 122}], ['KP', 0], [{v: 'KR', f: 'South Korea'}, {v: 4.03148925570975, f: 10752}], [{v: 'XK', f: 'Republic of Kosovo'}, {v: 2.707570176097936, f: 510}], [{v: 'KW', f: 'Kuwait'}, {v: 3.53655844257153, f: 3440}], [{v: 'KZ', f: 'Kazakhstan'}, {v: 3.481012420956573, f: 3027}], [{v: 'LA', f: 'Lao'}, {v: 1.2787536009528289, f: 19}], [{v: 'LB', f: 'Lebanon'}, {v: 2.8555191556677997, f: 717}], [{v: 'LK', f: 'Sri Lanka'}, {v: 2.7916906490201177, f: 619}], [{v: 'LR', f: 'Liberia'}, {v: 2.1492191126553797, f: 141}], ['LS', 0], [{v: 'LT', f: 'Lithuania'}, {v: 3.128399268717806, f: 1344}], [{v: 'LU', f: 'Luxembourg'}, {v: 3.5729877081982044, f: 3741}], [{v: 'LV', f: 'Latvia'}, {v: 2.9222062774390163, f: 836}], [{v: 'LY', f: 'Libya'}, {v: 1.785329835010767, f: 61}], [{v: 'MA', f: 'Morocco'}, {v: 3.628593255851259, f: 4252}], [{v: 'MD', f: 'Moldova'}, {v: 3.560862694727464, f: 3638}], [{v: 'ME', f: 'Montenegro'}, {v: 2.506505032404872, f: 321}], [{v: 'MG', f: 'Madagascar'}, {v: 2.107209969647868, f: 128}], [{v: 'MK', f: 'Macedonia'}, {v: 3.1525940779274695, f: 1421}], [{v: 'ML', f: 'Mali'}, {v: 2.6273658565927325, f: 424}], [{v: 'MM', f: 'Myanmar'}, {v: 2.173186268412274, f: 149}], [{v: 'MN', f: 'Mongolia'}, {v: 1.57978359661681, f: 38}], [{v: 'MR', f: 'Mauritania'}, {v: 0.8450980400142567, f: 7}], [{v: 'MW', f: 'Malawi'}, {v: 1.556302500767287, f: 36}], [{v: 'MX', f: 'Mexico'}, {v: 4.191143489954898, f: 15529}], [{v: 'MY', f: 'Malaysia'}, {v: 3.767230098110718, f: 5851}], [{v: 'MZ', f: 'Mozambique'}, {v: 1.8808135922807911, f: 76}], [{v: 'NA', f: 'Namibia'}, {v: 1.2041199826559246, f: 16}], ['NC', 0], [{v: 'NE', f: 'Niger'}, {v: 2.8457180179666586, f: 701}], [{v: 'NG', f: 'Nigeria'}, {v: 3.126131407261984, f: 1337}], [{v: 'NI', f: 'Nicaragua'}, {v: 1.1139433523068367, f: 13}], [{v: 'NL', f: 'Netherlands'}, {v: 4.586722297518068, f: 38612}], [{v: 'NO', f: 'Norway'}, {v: 3.881897973573011, f: 7619}], [{v: 'NP', f: 'Nepal'}, {v: 1.7323937598229684, f: 54}], [{v: 'NZ', f: 'New Zealand'}, {v: 3.1679078100014797, f: 1472}], [{v: 'OM', f: 'Oman'}, {v: 3.3285834497142015, f: 2131}], [{v: 'PA', f: 'Panama'}, {v: 3.7796686272071476, f: 6021}], [{v: 'PE', f: 'Peru'}, {v: 4.494015374757143, f: 31190}], [{v: 'PG', f: 'Papua New Guinea'}, {v: 0.9030899869919434, f: 8}], [{v: 'PH', f: 'Philippines'}, {v: 3.900803934810369, f: 7958}], [{v: 'PL', f: 'Poland'}, {v: 4.087000120795991, f: 12218}], [{v: 'PK', f: 'Pakistan'}, {v: 4.164709663539878, f: 14612}], ['PR', 0], [{v: 'PS', f: 'Palestine'}, {v: 2.5340261060561344, f: 342}], [{v: 'PT', f: 'Portugal'}, {v: 4.385999284138968, f: 24322}], [{v: 'PY', f: 'Paraguay'}, {v: 2.3617278360175926, f: 230}], [{v: 'QA', f: 'Qatar'}, {v: 4.076312687976857, f: 11921}], [{v: 'RO', f: 'Romania'}, {v: 4.065056603356018, f: 11616}], [{v: 'RS', f: 'Serbia'}, {v: 3.8215135284047723, f: 6630}], [{v: 'RU', f: 'Russia'}, {v: 4.971080929273843, f: 93558}], [{v: 'RW', f: 'Rwanda'}, {v: 2.326335860928751, f: 212}], [{v: 'SA', f: 'Saudi Arabia'}, {v: 4.3026988189917885, f: 20077}], ['SB', 0], [{v: 'SD', f: 'Sudan'}, {v: 2.5024271199844326, f: 318}], [{v: 'SE', f: 'Sweden'}, {v: 4.292721137774542, f: 19621}], [{v: 'SI', f: 'Slovenia'}, {v: 3.1486026548060932, f: 1408}], ['SJ', 0], [{v: 'SK', f: 'Slovakia'}, {v: 3.141136090120739, f: 1384}], [{v: 'SL', f: 'Sierra Leone'}, {v: 2.0170333392987803, f: 104}], [{v: 'SN', f: 'Senegal'}, {v: 2.9153998352122694, f: 823}], [{v: 'SO', f: 'Somalia'}, {v: 2.722633922533812, f: 528}], [{v: 'SR', f: 'Suriname'}, {v: 1.0, f: 10}], [{v: 'SS', f: 'South Sudan'}, {v: 1.5314789170422551, f: 34}], [{v: 'SV', f: 'El Salvador'}, {v: 2.537819095073274, f: 345}], [{v: 'SY', f: 'Syrian Arab Republic'}, {v: 1.6334684555795864, f: 43}], [{v: 'SZ', f: 'Swaziland'}, {v: 1.851258348719075, f: 71}], [{v: 'TD', f: 'Chad'}, {v: 1.716003343634799, f: 52}], ['TF', 0], [{v: 'TG', f: 'Togo'}, {v: 1.9956351945975497, f: 99}], [{v: 'TH', f: 'Thailand'}, {v: 3.4680517914542373, f: 2938}], ['TJ', 0], [{v: 'TL', f: 'Timor-Leste'}, {v: 1.380211241711606, f: 24}], ['TM', 0], [{v: 'TN', f: 'Tunisia'}, {v: 2.9890046156985366, f: 975}], [{v: 'TR', f: 'Turkey'}, {v: 5.059385422924658, f: 114653}], [{v: 'TT', f: 'Trinidad and Tobago'}, {v: 2.064457989226918, f: 116}], [{v: 'TW', f: 'Taiwan'}, {v: 2.632457292184724, f: 429}], [{v: 'TZ', f: 'Tanzania'}, {v: 2.4756711883244296, f: 299}], [{v: 'UA', f: 'Ukraine'}, {v: 3.973589623427257, f: 9410}], [{v: 'UG', f: 'Uganda'}, {v: 1.8976270912904412, f: 79}], [{v: 'US', f: 'USA'}, {v: 6.005008820672367, f: 1011600}], [{v: 'UY', f: 'Uruguay'}, {v: 2.792391689498254, f: 620}], [{v: 'UZ', f: 'Uzbekistan'}, {v: 3.287577809078705, f: 1939}], [{v: 'VE', f: 'Venezuela'}, {v: 2.517195897949974, f: 329}], [{v: 'VN', f: 'Vietnam'}, {v: 2.4313637641589874, f: 270}], ['VU', 0], [{v: 'YE', f: 'Yemen'}, {v: 0.0, f: 1}], [{v: 'ZA', f: 'South Africa'}, {v: 3.6986224297020978, f: 4996}], [{v: 'ZM', f: 'Zambia'}, {v: 1.9777236052888476, f: 95}], [{v: 'ZW', f: 'Zimbabwe'}, {v: 1.5051499783199058, f: 32}]]
+
+          var data = google.visualization.arrayToDataTable(arr);
+
+          var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+          chart.draw(data, {legend: 'none', colorAxis: {colors: ["white", "red"]}});
+      }
+    </script>
+
+<div>
+	<!-- <h3>Live Statistics & Guidelines</h3> -->
+    <table class="center">
+        <tr>
+            <th>Total Cases</th>
+            <th>Total Recoveries</th>
+            <th>Total Deaths</th>
+        </tr>
+        <tr>
+            <td id="cases">N/A</td>
+            <td id="recoveries">N/A</td>
+            <td id="deaths">N/A</td>
+        </tr>
+        <tr>
+            <th>Region Cases</th>
+            <th>Region Recoveries</th>
+            <th>Region Deaths</th>
+        </tr>
+        <tr>
+            <td id="IDcases">N/A</td>
+            <td id="IDrecover">N/A</td>
+            <td id="IDdeath">N/A</td>
+        </tr>
+        <tr>
+            <th>Serious Cases</th>
+            <th>Danger Rank</th>
+            <th>Active Cases</th>
+        </tr>
+        <tr>
+            <td id="IDserious">N/A</td>
+            <td id="IDdanger">N/A</td>
+            <td id="IDactive">N/A</td>
+        </tr>
+    </table>
+
+    <div class="selection" style="text-align:center;">
+        <p> Select a country: <p>
+        <select id="country_code" onchange="updateWidget()" class="country">
+            <option value='af'>Afghanistan</option>
+            <option value='al'>Albania</option>
+            <option value='dz'>Algeria</option>
+            <option value='ao'>Angola</option>
+            <option value='ar'>Argentina</option>
+            <option value='am'>Armenia</option>
+            <option value='au'>Australia</option>
+            <option value='at'>Austria</option>
+            <option value='az'>Azerbaijan</option>
+            <option value='bs'>Bahamas</option>
+            <option value='bd'>Bangladesh</option>
+            <option value='by'>Belarus</option>
+            <option value='be'>Belgium</option>
+            <option value='bz'>Belize</option>
+            <option value='bj'>Benin</option>
+            <option value='bt'>Bhutan</option>
+            <option value='bo'>Bolivia</option>
+            <option value='ba'>Bosnia and Herzegovina</option>
+            <option value='bw'>Botswana</option>
+            <option value='br'>Brazil</option>
+            <option value='bn'>Brunei Darussalam</option>
+            <option value='bg'>Bulgaria</option>
+            <option value='bf'>Burkina Faso</option>
+            <option value='bi'>Burundi</option>
+            <option value='kh'>Cambodia</option>
+            <option value='cm'>Cameroon</option>
+            <option value='ca'>Canada</option>
+            <option value='ci'>Ivory Coast</option>
+            <option value='cf'>Central African Republic</option>
+            <option value='td'>Chad</option>
+            <option value='cl'>Chile</option>
+            <option value='cn'>China</option>
+            <option value='co'>Colombia</option>
+            <option value='cg'>Congo</option>
+            <option value='cd'>Democratic Republic of Congo</option>
+            <option value='cr'>Costa Rica</option>
+            <option value='hr'>Croatia</option>
+            <option value='cu'>Cuba</option>
+            <option value='cy'>Cyprus</option>
+            <option value='cz'>Czechia</option>
+            <option value='dk'>Denmark</option>
+            <option value='oa'> Diamond Princess</option>
+            <option value='dj'>Djibouti</option>
+            <option value='do'>Dominican Republic</option>
+            <option value='cd'>DR Congo</option>
+            <option value='ec'>Ecuador</option>
+            <option value='eg'>Egypt</option>
+            <option value='sv'>El Salvador</option>
+            <option value='gq'>Equatorial Guinea</option>
+            <option value='er'>Eritrea</option>
+            <option value='ee'>Estonia</option>
+            <option value='et'>Ethiopia</option>
+            <option value='fk'>Falkland Islands</option>
+            <option value='fj'>Fiji</option>
+            <option value='fi'>Finland</option>
+            <option value='fr'>France</option>
+            <option value='gf'>French Guiana</option>
+            <option value='tf'>French Southern Territories</option>
+            <option value='ga'>Gabon</option>
+            <option value='gm'>Gambia</option>
+            <option value='ge'>Georgia</option>
+            <option value='de'>Germany</option>
+            <option value='gh'>Ghana</option>
+            <option value='gr'>Greece</option>
+            <option value='gl'>Greenland</option>
+            <option value='gt'>Guatemala</option>
+            <option value='gn'>Guinea</option>
+            <option value='gw'>Guinea-Bissau</option>
+            <option value='gy'>Guyana</option>
+            <option value='ht'>Haiti</option>
+            <option value='hn'>Honduras</option>
+            <option value='hk'>Hong Kong</option>
+            <option value='hu'>Hungary</option>
+            <option value='is'>Iceland</option>
+            <option value='in'>India</option>
+            <option value='id'>Indonesia</option>
+            <option value='ir'>Iran</option>
+            <option value='iq'>Iraq</option>
+            <option value='ie'>Ireland</option>
+            <option value='il'>Israel</option>
+            <option value='it'>Italy</option>
+            <option value='jm'>Jamaica</option>
+            <option value='jp'>Japan</option>
+            <option value='jo'>Jordan</option>
+            <option value='kz'>Kazakhstan</option>
+            <option value='ke'>Kenya</option>
+            <option value='kp'>Korea</option>
+            <option value='xk'>Kosovo</option>
+            <option value='kw'>Kuwait</option>
+            <option value='kg'>Kyrgyzstan</option>
+            <option value='la'>Lao</option>
+            <option value='lv'>Latvia</option>
+            <option value='lb'>Lebanon</option>
+            <option value='ls'>Lesotho</option>
+            <option value='lr'>Liberia</option>
+            <option value='ly'>Libya</option>
+            <option value='lt'>Lithuania</option>
+            <option value='lu'>Luxembourg</option>
+            <option value='mk'>Macedonia</option>
+            <option value='mg'>Madagascar</option>
+            <option value='mw'>Malawi</option>
+            <option value='my'>Malaysia</option>
+            <option value='ml'>Mali</option>
+            <option value='mr'>Mauritania</option>
+            <option value='mx'>Mexico</option>
+            <option value='md'>Moldova</option>
+            <option value='mn'>Mongolia</option>
+            <option value='me'>Montenegro</option>
+            <option value='ma'>Morocco</option>
+            <option value='mz'>Mozambique</option>
+            <option value='mm'>Myanmar</option>
+            <option value='na'>Namibia</option>
+            <option value='np'>Nepal</option>
+            <option value='nl'>Netherlands</option>
+            <option value='nc'>New Caledonia</option>
+            <option value='nz'>New Zealand</option>
+            <option value='ni'>Nicaragua</option>
+            <option value='ne'>Niger</option>
+            <option value='ng'>Nigeria</option>
+            <option value='kp'>North Korea</option>
+            <option value='no'>Norway</option>
+            <option value='om'>Oman</option>
+            <option value='pk'>Pakistan</option>
+            <option value='ps'>Palestine</option>
+            <option value='pa'>Panama</option>
+            <option value='pg'>Papua New Guinea</option>
+            <option value='py'>Paraguay</option>
+            <option value='pe'>Peru</option>
+            <option value='ph'>Philippines</option>
+            <option value='pl'>Poland</option>
+            <option value='pt'>Portugal</option>
+            <option value='pr'>Puerto Rico</option>
+            <option value='qa'>Qatar</option>
+            <option value='xk'>Republic of Kosovo</option>
+            <option value='ro'>Romania</option>
+            <option value='ru'>Russia</option>
+            <option value='rw'>Rwanda</option>
+            <option value='sa'>Saudi Arabia</option>
+            <option value='sn'>Senegal</option>
+            <option value='rs'>Serbia</option>
+            <option value='sl'>Sierra Leone</option>
+            <option value='sg'>Singapore</option>
+            <option value='sk'>Slovakia</option>
+            <option value='si'>Slovenia</option>
+            <option value='sb'>Solomon Islands</option>
+            <option value='so'>Somalia</option>
+            <option value='za'>South Africa</option>
+            <option value='kr'>South Korea</option>
+            <option value='ss'>South Sudan</option>
+            <option value='es'>Spain</option>
+            <option value='lk'>Sri Lanka</option>
+            <option value='sd'>Sudan</option>
+            <option value='sr'>Suriname</option>
+            <option value='sj'>Svalbard and Jan Mayen</option>
+            <option value='sz'>Swaziland</option>
+            <option value='se'>Sweden</option>
+            <option value='ch'>Switzerland</option>
+            <option value='sy'>Syrian Arab Republic</option>
+            <option value='tw'>Taiwan</option>
+            <option value='tj'>Tajikistan</option>
+            <option value='tz'>Tanzania</option>
+            <option value='th'>Thailand</option>
+            <option value='tl'>Timor-Leste</option>
+            <option value='tg'>Togo</option>
+            <option value='tt'>Trinidad and Tobago</option>
+            <option value='tn'>Tunisia</option>
+            <option value='tr'>Turkey</option>
+            <option value='tm'>Turkmenistan</option>
+            <option value='ae'>UAE</option>
+            <option value='ug'>Uganda</option>
+            <option value='gb'>United Kingdom</option>
+            <option value='ua'>Ukraine</option>
+            <option value='us' selected>USA</option>
+            <option value='uy'>Uruguay</option>
+            <option value='uz'>Uzbekistan</option>
+            <option value='vu'>Vanuatu</option>
+            <option value='ve'>Venezuela</option>
+            <option value='vn'>Vietnam</option>
+            <option value='eh'>Western Sahara</option>
+            <option value='ye'>Yemen</option>
+            <option value='zm'>Zambia</option>
+            <option value='zw'>Zimbabwe</option>
+        </select>
+    </div><hr>
+   
+</div>
+
+    <script>
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function()
+        {
+            if (this.readyState == 4 && this.status == 200)
+            {
+                var obj = JSON.parse(this.responseText);
+                document.getElementById("IDcases").innerHTML = obj.countrydata[0].total_cases;
+                document.getElementById("IDrecover").innerHTML = obj.countrydata[0].total_recovered;
+                document.getElementById("IDdeath").innerHTML = obj.countrydata[0].total_deaths;
+                document.getElementById("IDactive").innerHTML = obj.countrydata[0].total_active_cases;
+                document.getElementById("IDserious").innerHTML = obj.countrydata[0].total_serious_cases;
+                document.getElementById("IDdanger").innerHTML = obj.countrydata[0].total_danger_rank;
+            }
+        };
+        request.open("GET", "https://api.thevirustracker.com/free-api?countryTotal=US");
+        request.send();
+        function updateWidget()
+        {
+            var x = document.getElementById("country_code").value;
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = function()
+            {
+                if (this.readyState == 4 && this.status == 200)
+                {
+                    var obj = JSON.parse(this.responseText);
+                    document.getElementById("IDcases").innerHTML = obj.countrydata[0].total_cases;
+                    document.getElementById("IDrecover").innerHTML = obj.countrydata[0].total_recovered;
+                    document.getElementById("IDdeath").innerHTML = obj.countrydata[0].total_deaths;
+                    document.getElementById("IDactive").innerHTML = obj.countrydata[0].total_active_cases;
+                    document.getElementById("IDserious").innerHTML = obj.countrydata[0].total_serious_cases;
+                    document.getElementById("IDdanger").innerHTML = obj.countrydata[0].total_danger_rank;
+                }
+            };
+            request.open("GET", "https://api.thevirustracker.com/free-api?countryTotal=" + x);
+            request.send();
+        }
+    </script>
 
     <script>
         $.ajax({
