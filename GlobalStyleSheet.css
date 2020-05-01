@@ -97,10 +97,9 @@ body {
 
 
 .scrolling-wrapper {
-    position: absolute;
+    position: relative;
     width: 90%;
-    left:5%;
-    margin: auto;
+    margin: 0 auto;
 }
 .panel {
     display: none;
