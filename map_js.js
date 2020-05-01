@@ -87,7 +87,7 @@ function sortArr(data){
 
 function load_predictions(){                          // list of lists. [[lat,long,#,city]]
     var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", "csv_files/prediction_num_new_cases_global_v2.csv", false);
+    rawFile.open("GET", "csv_files/prediction_num_new_cases_global_v3.csv", false);
     rawFile.onreadystatechange = function ()
     {
         if(rawFile.readyState === 4)
