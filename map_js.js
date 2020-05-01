@@ -2,91 +2,29 @@ var basic_map, heatmap, markers,data_pred_lis;
 function createMap() {
     basic_map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 37, lng: -50},
-        zoom: 3,
-        styles: [
-            {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
-            {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
-            {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
-            {
-                featureType: 'administrative.locality',
-                elementType: 'labels.text.fill',
-                stylers: [{color: '#d59563'}]
-            },
-            {
-                featureType: 'poi',
-                elementType: 'labels.text.fill',
-                stylers: [{color: '#d59563'}]
-            },
-            {
-                featureType: 'poi.park',
-                elementType: 'geometry',
-                stylers: [{color: '#263c3f'}]
-            },
-            {
-                featureType: 'poi.park',
-                elementType: 'labels.text.fill',
-                stylers: [{color: '#6b9a76'}]
-            },
-            {
-                featureType: 'road',
-                elementType: 'geometry',
-                stylers: [{color: '#38414e'}]
-            },
-            {
-                featureType: 'road',
-                elementType: 'geometry.stroke',
-                stylers: [{color: '#212a37'}]
-            },
-            {
-                featureType: 'road',
-                elementType: 'labels.text.fill',
-                stylers: [{color: '#9ca5b3'}]
-            },
-            {
-                featureType: 'road.highway',
-                elementType: 'geometry',
-                stylers: [{color: '#746855'}]
-            },
-            {
-                featureType: 'road.highway',
-                elementType: 'geometry.stroke',
-                stylers: [{color: '#1f2835'}]
-            },
-            {
-                featureType: 'road.highway',
-                elementType: 'labels.text.fill',
-                stylers: [{color: '#f3d19c'}]
-            },
-            {
-                featureType: 'transit',
-                elementType: 'geometry',
-                stylers: [{color: '#2f3948'}]
-            },
-            {
-                featureType: 'transit.station',
-                elementType: 'labels.text.fill',
-                stylers: [{color: '#d59563'}]
-            },
-            {
-                featureType: 'water',
-                elementType: 'geometry',
-                stylers: [{color: '#17263c'}]
-            },
-            {
-                featureType: 'water',
-                elementType: 'labels.text.fill',
-                stylers: [{color: '#515c6d'}]
-            },
-            {
-                featureType: 'water',
-                elementType: 'labels.text.stroke',
-                stylers: [{color: '#17263c'}]
-            }
-        ]
+        zoom: 3
     });
 
     predictedMap();
 }
+
+
+function calc_distance(lat1,lng1,lat2,lng2){ // haversine formula from https://www.movable-type.co.uk/scripts/latlong.html
+    var R = 6371000;
+    var theta1  = lat1*Math.PI/180;
+    var theta2  = lat2*Math.PI/180;
+    var delta_theta = (lat2-lat1)* Math.PI/180;
+    var delta_lambda = (lng2-lng1)* Math.PI/180;
+
+    var a = Math.sin(delta_theta/2) *Math.sin(delta_theta/2) + Math.cos(theta1) * Math.cos(theta2) *
+        Math.sin(delta_lambda/2)* Math.sin(delta_lambda/2);
+
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    var d = R * c; // in meters
+    var d_miles = d/1609;
+    return d_miles;
+}
+
 
 function toggleHeatmap() {
     heatmap.setMap(heatmap.getMap() ? null : basic_map);
@@ -176,6 +114,7 @@ function get_pred(lat,lng){
     sortArr(data_pred_lis);
 }
 
+
 function updatePredCirc() {
     console.log("hi");
     var radius = document.getElementById("myRange").valueAsNumber;
@@ -200,19 +139,19 @@ function updatePredCirc() {
 
     console.log(data_pred_lis.slice(0,5));
 
-    if(data_pred_lis[0][0] < radius/69) {
+    if(data_pred_lis[0][0] < radius) {
         contentString = '<div id="content">' +
             '<b>' + city1 + ':</b>  ' + c1_one_day_pred + ' new '+case_s+' predicted tomorrow';
     }
-    if(data_pred_lis[1][0] < radius/69) {
+    if(data_pred_lis[1][0] < radius) {
         contentString = contentString + '<p><b>' + city2 + ':</b> ' + c2_one_day_pred + '<br />';
-        if(data_pred_lis[2][0] < radius/69) {
+        if(data_pred_lis[2][0] < radius) {
             contentString = contentString + '<b>' + city3 + ':</b> ' + c3_one_day_pred + '<br />';
         }
-        if(data_pred_lis[3][0] < radius/69) {
+        if(data_pred_lis[3][0] < radius) {
             contentString = contentString + '<b>' + city4 + ':</b> ' + c4_one_day_pred + '<br />';
         }
-        if(data_pred_lis[4][0] < radius/69) {
+        if(data_pred_lis[4][0] < radius) {
             contentString = contentString + '<b>' + city5 + ':</b> ' + c5_one_day_pred + '<br />';
         }
         contentString = contentString + '</p>';
@@ -248,7 +187,7 @@ function predictedMap() {
             var radius = document.getElementById("myRange").valueAsNumber;
             document.getElementById("rangeLabel").innerText = "Radius: " + document.getElementById("myRange").value+" mi";
             get_pred(def_lat,def_lng);
-            var contentString = updatePredCirc();
+            var contentString = updatePredCirc(def_lat,def_lng);
 
             cityCircle.setRadius(1609.3*radius);   //radius of 100 miles
             cityCircle.setCenter({lat:def_lat,lng:def_lng});
@@ -275,7 +214,7 @@ function predictedMap() {
             def_lng = lng;
             get_pred(lat,lng);
 
-            var contentString = updatePredCirc();
+            var contentString = updatePredCirc(def_lat,def_lng);
 
             cityCircle.setRadius(1609.3*radius);   //radius of 100 miles
             cityCircle.setCenter(mapsMouseEvent.latLng);
