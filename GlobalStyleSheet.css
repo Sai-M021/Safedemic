@@ -1,0 +1,148 @@
+head, body {
+/*    background: linear-gradient(180deg, #fc9803, #fc6203);
+    opacity: 0.6;*/
+    background: #ffffff;
+    margin: 0px;
+
+}
+body {
+ font-family: 'Open Sans', sans-serif;
+ font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6, select{
+ font-family: 'Archivo', sans-serif;
+ font-weight: 500;
+}
+body {
+  font-family: "Lato", sans-serif;
+}
+.icon {
+    top: 12px;
+    right: 45px;
+    width: 10px;
+    height: 20px;
+    position: fixed;
+}
+
+.navigation {
+  background-color: #111;
+  overflow: hidden;
+}
+
+.navigation a {
+  float: left;
+  text-align: center;
+  padding: 12px 5px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+}
+.navigation .logo {
+    padding-top: 0px;
+    padding-left: 20px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+}
+
+.navigation a:hover {
+  color: #f1f1f1;
+}
+
+.navigation .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+@media screen and (max-height: 450px) {
+  .navigation a {font-size: 18px;}
+}
+
+
+
+.article_img{
+    width: 0px;
+    height: 0px;
+}
+
+.article_subtext{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    color: #6d6d76;
+}
+
+.article_author{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10px;
+    color: #6d6d76;
+    font-weight: bold;
+}
+
+.article_url{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+}
+.article_url:hover{
+    text-decoration: underline;
+}
+
+.url_box{
+    border-bottom: 1px solid black;
+}
+
+
+.scrolling-wrapper {
+    position: absolute;
+    width: 90%;
+    left:5%;
+    margin: auto;
+}
+.panel {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev_button, .next_button {
+    cursor: pointer;
+    position: absolute;
+    width: auto;
+    padding: 16px;
+    color: #ff1b3b;
+    font-weight: bold;
+    font-size: 18px;
+    transition: .8s;
+}
+.next_button {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev_button:hover, .next_button:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.page_icon {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin:  2px;
+    position:relative;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .page_icon:hover {
+    background-color: #717171;
+}
+
+.icon_div{
+    position: relative;
+    margin-top: 10px;
+}
