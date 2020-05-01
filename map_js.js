@@ -1,15 +1,27 @@
-var basic_map, heatmap, markers,data_pred_lis;
+var basic_map, spreadmap, predmap, markers,data_pred_lis;
 function createMap() {
     basic_map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 37, lng: -50},
-        zoom: 3
+        zoom: 3,
+
     });
 
     predictedMap();
 }
 
+function toggleSpreadmap() {
+    spreadmap.setMap(spreadmap.getMap() ? null : basic_map);
+}
+function togglePredmap() {
+    predmap.setMap(predmap.getMap() ? null : basic_map);
+}
+function toggleViolations() {
+    for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(null);
+    }
+}
 
-function calc_distance(lat1,lng1,lat2,lng2){ // haversine formula from https://www.movable-type.co.uk/scripts/latlong.html
+function calc_distance(lat1,lng1,lat2,lng2){ // haversine formula
     var R = 6371000;
     var theta1  = lat1*Math.PI/180;
     var theta2  = lat2*Math.PI/180;
@@ -23,20 +35,6 @@ function calc_distance(lat1,lng1,lat2,lng2){ // haversine formula from https://w
     var d = R * c; // in meters
     var d_miles = d/1609;
     return d_miles;
-}
-
-
-function toggleHeatmap() {
-    heatmap.setMap(heatmap.getMap() ? null : basic_map);
-}
-function toggleViolations() {
-    for (var i = 0; i < markers.length; i++) {
-        markers[i].setMap(null);
-    }
-}
-
-function calc_distance(lat1,lng1,lat2,lng2){
-    return Math.sqrt(Math.pow(lat2-lat1,2)  + Math.pow(lng2-lng1,2),0.5);
 }
 
 function parse_preds(text){     //lat,lng,num, city
@@ -115,7 +113,30 @@ function get_pred(lat,lng){
 }
 
 
-function updatePredCirc() {
+function get_google_dist(lat0,long0,lat1,long1,lat2,long2,lat3,long3,lat4,long4,lat5,long5){
+    url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&" +
+        "origins=" +lat0+',' + long0+ "&"+
+        "destinations=" +
+        lat1 + "%2C"+long1+"%"+
+        "7C"+lat2 + "%2C"+long2+"%"+
+        "7C"+lat3 + "%2C"+long3+"%"+
+        "7C"+lat4 + "%2C"+long4+"%"+
+        "7C"+lat5 + "%2C"+long5+"&"+
+        "key=AIzaSyBTrhGG7zVrT_eBVn_06khunxCMz23YXZs";
+
+    console.log(url);
+    request = new Request(url);
+    fetch(request,{mode:"no-cors"}).then(
+        function(u){return u.json();}
+    ).then(
+        function (json) {
+            console.log(json);
+        }
+    )
+}
+
+
+function updatePredCirc(lat,long) {
     console.log("hi");
     var radius = document.getElementById("myRange").valueAsNumber;
     var c1_one_day_pred = data_pred_lis[0][3];
@@ -129,6 +150,12 @@ function updatePredCirc() {
     var city3 = data_pred_lis[2][4];
     var city4 = data_pred_lis[3][4];
     var city5 = data_pred_lis[4][4];
+
+    // get_google_dist(lat,long,data_pred_lis[0][1],data_pred_lis[0][2]
+    //     ,data_pred_lis[1][1],data_pred_lis[1][2]
+    //     ,data_pred_lis[2][1],data_pred_lis[2][2]
+    //     ,data_pred_lis[3][1],data_pred_lis[3][2]
+    //     ,data_pred_lis[4][1],data_pred_lis[4][2]);
 
     var case_s = "cases";
 
@@ -200,30 +227,31 @@ function predictedMap() {
     });
 
 
-        basic_map.addListener('click', function(mapsMouseEvent)
-        {
+    basic_map.addListener('click', function(mapsMouseEvent)
+    {
 
-            var radius = document.getElementById("myRange").valueAsNumber;
+        var radius = document.getElementById("myRange").valueAsNumber;
 
-            var lat_lng_s = mapsMouseEvent.latLng.toString();
-            lat_lng_s = lat_lng_s.slice(1,-1);
-            pos = lat_lng_s.indexOf(',');
-            var lat = parseFloat(lat_lng_s.substring(0,pos-1));
-            var lng = parseFloat(lat_lng_s.substring(pos+1));
-            def_lat = lat;
-            def_lng = lng;
-            get_pred(lat,lng);
+        var lat_lng_s = mapsMouseEvent.latLng.toString();
+        console.log(lat_lng_s);
+        lat_lng_s = lat_lng_s.slice(1,-1);
+        pos = lat_lng_s.indexOf(',');
+        var lat = parseFloat(lat_lng_s.substring(0,pos-1));
+        var lng = parseFloat(lat_lng_s.substring(pos+1));
+        def_lat = lat;
+        def_lng = lng;
+        get_pred(lat,lng);
 
-            var contentString = updatePredCirc(def_lat,def_lng);
+        var contentString = updatePredCirc(def_lat,def_lng);
 
-            cityCircle.setRadius(1609.3*radius);   //radius of 100 miles
-            cityCircle.setCenter(mapsMouseEvent.latLng);
+        cityCircle.setRadius(1609.3*radius);   //radius of 100 miles
+        cityCircle.setCenter(mapsMouseEvent.latLng);
 
-            infoWindow.close();
-            infoWindow = new google.maps.InfoWindow({position: mapsMouseEvent.latLng});
-            infoWindow.setContent(contentString);
-            infoWindow.open(basic_map);
-        });
+        infoWindow.close();
+        infoWindow = new google.maps.InfoWindow({position: mapsMouseEvent.latLng});
+        infoWindow.setContent(contentString);
+        infoWindow.open(basic_map);
+    });
 
 
 }
@@ -303,7 +331,7 @@ function parse_csv(text) {
 
 function spreadMap() {
     var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", "data.csv", false);
+    rawFile.open("GET", "csv_files/data.csv", false);
     rawFile.onreadystatechange = function ()
     {
         if(rawFile.readyState === 4)
@@ -313,24 +341,68 @@ function spreadMap() {
                 var allText = rawFile.responseText;
                 var lat_long_freq = parse_csv(allText);
                 var plot_points = [];
+
+
                 for(var i = 0; i < lat_long_freq.length; i++){
                     var lat = lat_long_freq[i][0];
                     var long = lat_long_freq[i][1];
                     var count = lat_long_freq[i][2];
-                    for(var c = 0; c < count; c++){
-                        plot_points.push(new google.maps.LatLng(lat,long));
-                    }
+
+                    plot_points.push({location: new google.maps.LatLng(lat,long),weight:count});
+
                 }
-                if(heatmap != null) {
-                    heatmap.setMap(null);
+                if(spreadmap != null) {
+                    spreadmap.setMap(null);
                 }
-                heatmap = new google.maps.visualization.HeatmapLayer({
+                spreadmap = new google.maps.visualization.HeatmapLayer({
                     data: plot_points,
                     map: basic_map
                 });
+
             }
         }
     }
     rawFile.send(null);
+}
+
+function predictedHeatMap(){
+    var plot_points = [];
+    for(var i = 0; i < data_pred_lis.length; i++){
+        var lat = data_pred_lis[i][1];
+        var long = data_pred_lis[i][2];
+        var count = data_pred_lis[i][3];
+        for(var c = 0; c < count; c++){
+            plot_points.push(new google.maps.LatLng(lat,long));
+        }
+    }
+    if(predmap != null) {
+        predmap.setMap(null);
+    }
+    predmap = new google.maps.visualization.HeatmapLayer({
+        data: plot_points,
+        map: basic_map
+    });
+    changePredGradient();
+}
+
+function changePredGradient() {
+    var gradient = [
+        'rgba(0, 255, 255, 0)',
+        'rgba(0, 255, 255, 1)',
+        'rgba(0, 191, 255, 1)',
+        'rgba(0, 127, 255, 1)',
+        'rgba(0, 63, 255, 1)',
+        'rgba(0, 0, 255, 1)',
+        'rgba(0, 0, 223, 1)',
+        'rgba(0, 0, 191, 1)',
+        'rgba(0, 0, 159, 1)',
+        'rgba(0, 0, 127, 1)',
+        'rgba(63, 0, 91, 1)',
+        'rgba(127, 0, 63, 1)',
+        'rgba(191, 0, 31, 1)',
+        'rgba(255, 0, 0, 1)'
+    ]
+
+    predmap.set('gradient', gradient);
 }
 
