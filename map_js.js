@@ -358,6 +358,8 @@ function spreadMap() {
                     data: plot_points,
                     map: basic_map
                 });
+		   changeSpreadGradient();
+
 
             }
         }
@@ -405,4 +407,21 @@ function changePredGradient() {
 
     predmap.set('gradient', gradient);
 }
+
+function changeSpreadGradient() {
+    var gradient = ["rgba(0, 0, 0, 0)",
+        "rgb(34,10,255)",
+        "rgb(74,0,255)",
+        "rgb(160,11,255)",
+        "rgb(255,17,251)",
+        "rgb(244,4,219)",
+        "rgb(249,0,189)",
+        "rgb(255,0,114)",
+        "rgb(255,0,78)",
+        "rgb(255,3,15)",
+        "rgb(255,0,0)"];
+    
+    spreadmap.set('gradient', gradient);
+}
+
 
