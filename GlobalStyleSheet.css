@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6, select{
  font-weight: 500;
 }
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Trebuchet MS", sans-serif;
 }
 .icon {
     top: 12px;
@@ -68,20 +68,20 @@ body {
 }
 
 .article_subtext{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Franklin Gothic', sans-serif;
     font-size: 15px;
-    color: #6d6d76;
+    color: #000;
 }
 
 .article_author{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Franklin Gothic', sans-serif;
     font-size: 10px;
     color: #6d6d76;
     font-weight: bold;
 }
 
 .article_url{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Franklin Gothic', sans-serif;
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
