@@ -4,7 +4,7 @@ We are in the midst of a global pandemic that is showing no signs of slowing dow
 
 ## Instructions
 
-The link to the website is in the description of the repository (https://github.com/neilr23/safedemic-covidathon). Below is summary of Safedemic's features:
+The link to the website is in the description of the repository (https://github.com/neilr23/Safedemic). Below is summary of Safedemic's features:
 
 ## Features
 
