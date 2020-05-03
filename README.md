@@ -13,4 +13,4 @@ The link to the website is in the description of the repository (https://github.
 - Telediagnosis: Report your symptoms to a doctor.
 - Artificial Intelligence: COVID-19 spread prediction using machine learning. 
 - Live News: Popular news articles relevent to COVID-19 and any progress/breakthroughs made.
-- Heatmaps: Maps the current spread of COVID-19 based on patient data from the John Hopkins Whiting School of Engineering. This setting will show the spread in the form of a heatmap (current waitime for toggle is 20-30 secs, we are looking to improve this in the future).
+- Heatmaps: Maps the current spread of COVID-19 based on patient data from the John Hopkins Whiting School of Engineering. This setting will show the spread in the form of a heatmap.
