@@ -8,7 +8,7 @@
         }
         else
         {
-          window.location = "https://neilr23.github.io/safedemic-lumiata/";
+          window.location = "https://neilr23.github.io/Safedemic/";
           document.getElementById("signoutdirect").style.visibility = "visible";
           document.getElementById("signoutdirect").disabled = false;
         }
@@ -55,7 +55,7 @@
   		if (user) {
   			if (user.emailVerified)
   			{
-  				window.location = "https://neilr23.github.io/safedemic-lumiata/";
+  				window.location = "https://neilr23.github.io/Safedemic/";
   				return;
   			}
   		}
@@ -93,7 +93,7 @@
     function signout(){
       if (firebase.auth().currentUser) {
           firebase.auth().signOut();
-          window.location = "https://neilr23.github.io/safedemic-lumiata/";
+          window.location = "https://neilr23.github.io/Safedemic/";
         }
     }
     function verifyemail(){

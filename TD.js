@@ -88,7 +88,7 @@
     function signout(){
       if (firebase.auth().currentUser) {
           firebase.auth().signOut();
-          window.location = "https://neilr23.github.io/safedemic-lumiata/";
+          window.location = "https://neilr23.github.io/Safedemic/";
         }
     }
     function openReportForm() { //Source: https://www.w3schools.com/howto/howto_css_modals.asp
