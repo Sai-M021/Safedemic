@@ -110,31 +110,31 @@
       document.getElementById("report_section").style.display = "none";
     }
     // slide show tutorial https://www.w3schools.com/howto/howto_js_slideshow.asp
-    var slideIndex = 1;
-    showSlides(slideIndex);
+    // var slideIndex = 1;
+    // showSlides(slideIndex);
 
-    function sideSlide(n) {
-        showSlides(slideIndex += n);
-    }
+    // function sideSlide(n) {
+    //     showSlides(slideIndex += n);
+    // }
 
-    function switchSlide(n) {
-        showSlides(slideIndex = n);
-    }
+    // function switchSlide(n) {
+    //     showSlides(slideIndex = n);
+    // }
 
-    function showSlides(n) {
-        var slides = document.getElementsByClassName("panel");
-        var dots = document.getElementsByClassName("page_icon");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (var i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
-    }
+    // function showSlides(n) {
+    //     var slides = document.getElementsByClassName("panel");
+    //     var dots = document.getElementsByClassName("page_icon");
+    //     if (n > slides.length) {slideIndex = 1}
+    //     if (n < 1) {slideIndex = slides.length}
+    //     for (var i = 0; i < slides.length; i++) {
+    //         slides[i].style.display = "none";
+    //     }
+    //     for (i = 0; i < dots.length; i++) {
+    //         dots[i].className = dots[i].className.replace(" active", "");
+    //     }
+    //     slides[slideIndex-1].style.display = "block";
+    //     dots[slideIndex-1].className += " active";
+    // }
  function register(){
 
     var email = document.getElementById("email").value;
