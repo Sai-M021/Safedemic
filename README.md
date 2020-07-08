@@ -2,10 +2,6 @@
 
 We are in the midst of a global pandemic that is showing no signs of slowing down. As we all continue to play our part in social distancing, we want to provide the public with a web application that disseminates and collects data regarding current pandemics, their spread, and their impact on our world.
 
-## Instructions
-
-The link to the website is in the description of the repository (https://github.com/neilr23/Safedemic). Below is summary of Safedemic's features:
-
 ## Features
 
 - Live Statistics: COVID-19 statistics summary based on user selected location.
