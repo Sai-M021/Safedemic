@@ -8,6 +8,10 @@ Click on the thumbnail below to watch our demonstation video!
 
 [![Safedemic!](thumbnail.png)](http://www.youtube.com/watch?v=iEYuA12UWf4 "Watch our Demo!")
 
+CLick on the link below to read our machine learning write up!
+
+https://drive.google.com/file/d/1g9wDfgMELl83YGpag_b3-rVI6cf5FtjH/view
+
 ## Features
 
 - Live Statistics: COVID-19 statistics summary based on user selected location.
