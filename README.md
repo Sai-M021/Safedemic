@@ -6,7 +6,7 @@ We are in the midst of a global pandemic that is showing no signs of slowing dow
 
 Click on the thumbnail below to watch our demonstation video!
 
-[![Safedemic!](https://img.youtube.com/vi/iEYuA12UWf4/1.jpg)](http://www.youtube.com/watch?v=iEYuA12UWf4 "Watch our Demo!")
+[![Safedemic!](thumbnail.png)](http://www.youtube.com/watch?v=iEYuA12UWf4 "Watch our Demo!")
 
 ## Features
 
