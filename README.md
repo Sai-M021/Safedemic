@@ -2,7 +2,9 @@
 
 We are in the midst of a global pandemic that is showing no signs of slowing down. As we all continue to play our part in social distancing, we want to provide the public with a web application that disseminates and collects data regarding current pandemics, their spread, and their impact on our world.
 
-[![Safedemic!](https://img.youtube.com/vi/iEYuA12UWf4/0.jpg)](http://www.youtube.com/watch?v=iEYuA12UWf4)
+## Demo
+
+[![Safedemic!](https://img.youtube.com/vi/iEYuA12UWf4/0.jpg)](http://www.youtube.com/watch?v=iEYuA12UWf4 "Watch our Demo!")
 
 ## Features
 
