@@ -5,9 +5,11 @@ We are in the midst of a global pandemic that is showing no signs of slowing dow
 ## Demo
 
 Click on the thumbnail below to watch our demonstation video!
+
 [![Safedemic!](thumbnail2.png)](http://www.youtube.com/watch?v=iEYuA12UWf4 "Watch our Demo!")
 
 CLick on the link below to read our machine learning write up!
+
 https://drive.google.com/file/d/1g9wDfgMELl83YGpag_b3-rVI6cf5FtjH/view
 
 ## Features
