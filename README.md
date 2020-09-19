@@ -48,14 +48,15 @@ We learned how to effectively use the Google Maps API and News API. However, wha
 We plan to include prediction spread visualization for all countries across the world. Moreover, we plan to attract users initially by using social media outreach on Facebook, Instagram, and Twitter. In addition, we will contact our local law enforcement officers and state representatives in order for them to advertise our product to their larger network. We believe given the current situation that many people will download our application in order to report violations as it is in their personal interest. Ultimately, we plan to attract users nationwide along with targeted advertising in areas with high numbers of infected people and metropolitan areas (NYC, London).
 
 ## Built With
-corona-virus-tracker
-css3
-firebase
-google-maps
-html5
-javascript
-news
-python
-tensorflow
-typeform
-Try it out
+- corona-virus-tracker
+- css3
+- firebase
+- google-maps
+- html5
+- javascript
+- news
+- python
+- tensorflow
+- typeform
+
+# Try it out!
